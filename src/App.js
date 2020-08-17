@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -7,14 +7,30 @@ import Chat from "./components/Chat";
 import Login from "./components/Login";
 import {useStateValue} from "./StateProvider";
 import TradingView from "./components/TradingView";
+import firebase from "firebase";
+import {actionTypes} from "./reducer";
 
 function App() {
-    const [{user}, dispatch] = useStateValue();
+    const [{isLoggedIn}, dispatch] = useStateValue();
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user?.uid) {
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    payload: user
+                })
+
+            }
+
+
+        });
+    }, [dispatch])
 
     return (
         <div className="app">
             <Router>
-                {!user
+                {!isLoggedIn
                     ?
                     <Login/>
                     :

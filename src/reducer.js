@@ -1,9 +1,13 @@
 export const initialState = {
-    user: null
+    user: null,
+    isLoggedIn: false,
+    searchedChannels: [],
 };
 
 export const actionTypes = {
-    SET_USER: "SER_USER"
+    SET_USER: "SER_USER",
+    LOGOUT: "LOGOUT",
+    SEARCH: "SEARCH"
 }
 
 const reducer = (state, action) => {
@@ -11,8 +15,17 @@ const reducer = (state, action) => {
         case actionTypes.SET_USER:
             return {
                 ...state,
-                user: action.payload
+                user: action.payload,
+                isLoggedIn: true
             }
+
+        case actionTypes.LOGOUT:
+            return {
+                ...state,
+                user: null,
+                isLoggedIn: false
+            }
+
 
         default:
             return state

@@ -11,6 +11,7 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import AppsIcon from '@material-ui/icons/Apps';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
 import db from '../firebase'
@@ -42,18 +43,19 @@ const Sidebar = () => {
                 </div>
                 <CreateIcon/>
             </div>
-            <SidebarOptions Icon={InsertCommentIcon} title={'Threads'}/>
-            <SidebarOptions Icon={InboxIcon} title={'Mentions & reactions'}/>
-            <SidebarOptions Icon={DraftsIcon} title={'Saved items'}/>
-            <SidebarOptions Icon={BookmarkBorderIcon} title={'Channel browser'}/>
-            <SidebarOptions Icon={PeopleAltIcon} title={'People & user groups'}/>
-            <SidebarOptions Icon={AppsIcon} title={'Apps'}/>
-            <SidebarOptions Icon={FileCopyIcon} title={'File browser'}/>
-            <SidebarOptions Icon={ExpandLessIcon} title={'Show less'}/>
+            <SidebarOptions Icon={TrendingUpIcon} title={'Charts'}/>
+            {/*<SidebarOptions Icon={InsertCommentIcon} title={'Threads'}/>*/}
+            {/*<SidebarOptions Icon={InboxIcon} title={'Mentions & reactions'}/>*/}
+            {/*<SidebarOptions Icon={DraftsIcon} title={'Saved items'}/>*/}
+            {/*<SidebarOptions Icon={BookmarkBorderIcon} title={'Channel browser'}/>*/}
+            {/*<SidebarOptions Icon={PeopleAltIcon} title={'People & user groups'}/>*/}
+            {/*<SidebarOptions Icon={AppsIcon} title={'Apps'}/>*/}
+            {/*<SidebarOptions Icon={FileCopyIcon} title={'File browser'}/>*/}
+            {/*<SidebarOptions Icon={ExpandLessIcon} title={'Show less'}/>*/}
+            {/*<hr/>*/}
+            {/*<SidebarOptions Icon={ExpandMoreIcon} title={'Channels'}/>*/}
             <hr/>
-            <SidebarOptions Icon={ExpandMoreIcon} title={'Channels'}/>
-            <hr/>
-            <SidebarOptions Icon={AddIcon} title={'Add Channel'} addChannelOption/>
+            <SidebarOptions Icon={AddIcon} title={'Add Symbol'} addChannelOption/>
 
             {channels.map(channel => (
                 <SidebarOptions key={channel.id} title={channel.name} id={channel.id}/>

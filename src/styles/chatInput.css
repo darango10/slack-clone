@@ -3,14 +3,25 @@
 }
 
 .chatInput > form {
-    position: relative;
+    /*position: relative;*/
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding: 20px;
 }
 
 .chatInput__message {
-    position: fixed;
+    /*position: fixed;*/
     bottom: 30px;
+    width: 60%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+.chatInput__image {
+    /*position: fixed;*/
+    bottom: 87px;
     width: 60%;
     border: 1px solid gray;
     border-radius: 3px;

@@ -22,7 +22,7 @@ const Chat = () => {
 
             db.collection('rooms').doc(roomId)
                 .collection('messages')
-                .orderBy('timestamp', 'asc')
+                .orderBy('timestamp', 'desc')
                 .onSnapshot(snapshot => {
                     setRoomMessages(snapshot.docs.map((doc) => doc.data()))
                 })

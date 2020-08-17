@@ -13,7 +13,7 @@ const ChatInput = ({channelName, channelId}) => {
 
     const sendMessage = (e) => {
         e.preventDefault();
-        if (channelId) {
+        if (channelId && input.trim() !== '') {
             db.collection('rooms').doc(channelId)
                 .collection('messages').add({
                 message: input,
